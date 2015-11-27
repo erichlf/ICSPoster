@@ -11,6 +11,9 @@
 \DeclareOption{11pt}{\def\@@ptsize{11pt}}
 \DeclareOption{12pt}{\def\@@ptsize{12pt}}
 \DeclareOption{13pt}{\def\@@ptsize{13pt}}
+\DeclareOption{14pt}{\def\@@ptsize{14pt}}
+\DeclareOption{17pt}{\def\@@ptsize{17pt}}
+\DeclareOption{20pt}{\def\@@ptsize{20pt}}
 
 %%% EXECUTION OF OPTIONS --------------------------------------------------
 %% default to:
@@ -20,7 +23,7 @@
 
 %%% PACKAGE LOADING -------------------------------------------------------
 %% based on std report class
-\LoadClass[\@@ptsize]{article}
+\LoadClass[\@@ptsize]{extarticle}
 % packages needed
 \RequirePackage{latexsym,amssymb}
 \RequirePackage{xcolor}
@@ -54,19 +57,19 @@
 \def\logo#1{\booltrue{@logo} \gdef\@logo{#1}}
 
 % parameters-
-\setlength{\pdfpageheight}{594mm}
-\setlength{\pdfpagewidth}{420mm}
-\setlength{\paperheight}{594mm}
-\setlength{\paperwidth}{420mm}
-\setlength{\voffset}{-.5in}
-\setlength{\hoffset}{-1.0in}
+\setlength{\pdfpageheight}{1189mm}
+\setlength{\pdfpagewidth}{841mm}
+\setlength{\paperheight}{1189mm}
+\setlength{\paperwidth}{841mm}
+\setlength{\voffset}{-.25in}
+\setlength{\hoffset}{-.75in}
 \setlength{\evensidemargin}{5mm}
 \setlength{\oddsidemargin}{5mm}
 \setlength{\topmargin}{0mm}
 \setlength{\headheight}{0mm}
 \setlength{\headsep}{0mm}
-\setlength{\textheight}{624mm}
-\setlength{\textwidth}{410mm}
+\setlength{\textheight}{1153mm}
+\setlength{\textwidth}{821mm}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2explus2ex}
 \setlength{\fboxsep}{0.01\textwidth}
@@ -77,16 +80,20 @@
 \setlength{\columnseprule}{0.1pt}
 \setlength{\multicolsep}{0cm}
 
-
-% font for titel of poster
+% font for title of poster
 \newcommand{\titlefont}[1]
 {\protect{\fontencoding{T1}\fontfamily{pag}\fontseries{b}%
-    \fontshape{n}\fontsize{1.2cm}{1ex}
+    \fontshape{n}\fontsize{2.4cm}{1ex}
     \selectfont{#1}}}
 
 \newcommand{\subtitlefont}[1]
 {\protect{\fontencoding{T1}\fontfamily{pag}\fontseries{b}%
-    \fontshape{n}\fontsize{0.9cm}{1ex}
+    \fontshape{n}\fontsize{1.8cm}{1ex}
+    \selectfont{#1}}}
+
+\newcommand{\partfont}[1]
+{\protect{\fontencoding{T1}\fontfamily{pag}\fontseries{b}%
+    \fontshape{n}\fontsize{1.1cm}{1ex}
     \selectfont{#1}}}
 
 % command for page headings
@@ -94,9 +101,6 @@
   \colorbox[rgb]{1.0000, 0.9020, 0.4549}{\makebox[0.97\columnwidth]
   {\rule[-1.2ex]{0pt}{3.7ex}\partfont{#1}}}%\bigskip
 }
-
-% font for headings of pages
-\newcommand{\partfont}[1]{{\Large \textsf{\textbf{#1}}}}
 
 % define our keys for headerbox and posterbox
 \define@key{headerbox}{height}{\def\hb@height{#1}}
@@ -140,10 +144,8 @@
 \def\maketitle{%
   \pagestyle{empty}
 
-  \fbox{
-    \parbox{0.9972\boxwidth}{
-      \hspace*{-.3cm}
-      \begin{minipage}{0.42\textwidth}
+  \begin{posterbox}
+      \begin{minipage}{0.45\textwidth}
         \ifbool{@logo}{
           \includegraphics[width=\textwidth]{\@logo}
         }{
@@ -153,12 +155,11 @@
       \hspace*{0.07\textwidth}
       \begin{minipage}{0.43\textwidth}
         \ifbool{@sub}{
-          \titlefont{\@title}\\[0.7cm]
+          \titlefont{\@title}\\[1em]
           \subtitlefont{\@subtitle}
         }{
           \titlefont{\@title}
         }
       \end{minipage}
-    }
-  }
+  \end{posterbox}
 }

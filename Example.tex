@@ -1,4 +1,6 @@
-\documentclass[12pt]{ICSPoster}
+\documentclass[20pt]{ICSPoster}
+% font-size options are 10pt, 11pt, 12pt, 13pt, 14pt, 17pt, 20pt
+% @TODO: paper-size is A0, but will have more options later
 
 %\usepackage[german]{babel}
 
@@ -14,15 +16,13 @@
 \logo{USI-ICS.jpg} % optional logo default is USI-ICS.jpg
 
 \begin{document}
-  \maketitle
+  \maketitle % this should take up approximate 0.17\textheight
 
-
-
-
- \begin{posterbox}
+  \begin{posterbox}[2]
     \begin{headerbox}[
         title=Background: Understanding Cardiac Resynchronization Therapy,
-        height=0.19\textheight]
+        height=0.25\textheight,
+        width=0.47\textwidth]
       \begin{minipage}{\textwidth}\sf
         \textbf{Background}
         \vspace{1mm}
@@ -55,23 +55,16 @@
           \item Final Goal: Provide practical guidelines about optimal site, tailored device programming
                 and easy-to-use follow-up criteria
         \end{compactitem}
+
       \end{minipage}
-           \begin{minipage}{0.25\textwidth}\sf
+      \begin{minipage}{0.25\textwidth}\sf
         \vspace{0.5cm}
         \hspace{1cm}
-        \includegraphics[height=0.9\textwidth]{anatomy.png}
+        \includegraphics[height=1.8\textwidth]{anatomy.png}
         \begin{flushright}
         {\tiny \copyright Mark Potse, University Maastricht}
         \end  {flushright}
       \end{minipage}
-      \end{headerbox}]
- \end{posterbox}
-
-  \begin{posterbox}[2]
-    \begin{headerbox}[
-        title=Background: Understanding Cardiac Resynchronization Therapy,
-        height=0.23\textheight,
-        width=0.47\textwidth]
 
     \end{headerbox}
     \vfill
@@ -80,7 +73,7 @@
     \begin{headerbox}[
         title=Modeling Aspects,
         width=0.47\textwidth,
-        height=0.215\textheight]
+        height=0.25\textheight]
       \begin{minipage}{\textwidth}\sf
         \textbf{Bidomain Equation}
         \begin{center}
@@ -133,7 +126,7 @@
   \begin{posterbox}[2]
     \begin{headerbox}[
         title=End-to-End Workflow,
-        height=0.25\textheight,
+        height=0.28\textheight,
         width=0.47\textwidth]
       \begin{minipage}{\textwidth}\sf
         \textbf{Project Partners}
@@ -168,7 +161,7 @@
 
     \begin{headerbox}[
         title=A Case for High Performance Computing,
-        height=0.25\textheight,
+        height=0.28\textheight,
         width=0.47\textwidth]
       \textbf{Challenge}
       \begin{compactitem}
@@ -205,6 +198,43 @@
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+  \begin{posterbox}
+    \begin{headerbox}[
+        title=Simulation of a Heartbeat,
+        height=0.21\textheight]
+      \begin{minipage}{0.19\textwidth}\sf
+        \textbf{Description}
+        \begin{compactitem}
+          \item Monodomain simulation of a full heartbeat
+          \item Stimulation current applied at end of Purkinje fibers
+          \item Performed on 132 cores of \textit{Rosa} with $\sim 40$ min wallclock time
+          \item The visualization shows the steep rise of the transmembrane potential
+                and the smooth decay
+        \end{compactitem}
+
+        \vspace{0.5cm}
+
+        \textbf{Visualization}
+        \begin{compactitem}
+          \item Visualization is an essential tool for analysis of simulation data but can
+                be a challenge in itself
+          \item Visualization (performed by Jean Favre from CSCS) required four visualization nodes
+                to allow for handling the massive data volume produced by the time-dependent simulation
+        \end{compactitem}
+      \end{minipage}
+      \begin{minipage}{0.79\textwidth}\sf
+        \begin{center}
+          \includegraphics[width=0.3\textwidth]{heart1}
+          \includegraphics[width=0.3\textwidth]{heart2}
+          \includegraphics[width=0.3\textwidth]{heart3}
+        \end{center}
+        \begin{center}
+          \includegraphics[width=0.3\textwidth]{heart4}
+          \includegraphics[width=0.3\textwidth]{heart5}
+          \includegraphics[width=0.3\textwidth]{heart6}
+        \end{center}
+      \end{minipage}
+      \end{headerbox}
+  \end{posterbox}
 
 \end{document}
