@@ -16,11 +16,13 @@
 \begin{document}
   \maketitle
 
-  \begin{posterbox}[2]
+
+
+
+ \begin{posterbox}
     \begin{headerbox}[
         title=Background: Understanding Cardiac Resynchronization Therapy,
-        height=0.23\textheight,
-        width=0.47\textwidth]
+        height=0.19\textheight]
       \begin{minipage}{\textwidth}\sf
         \textbf{Background}
         \vspace{1mm}
@@ -53,16 +55,23 @@
           \item Final Goal: Provide practical guidelines about optimal site, tailored device programming
                 and easy-to-use follow-up criteria
         \end{compactitem}
-
       \end{minipage}
-      \begin{minipage}{0.25\textwidth}\sf
+           \begin{minipage}{0.25\textwidth}\sf
         \vspace{0.5cm}
         \hspace{1cm}
-        \includegraphics[height=1.8\textwidth]{anatomy.png}
+        \includegraphics[height=0.9\textwidth]{anatomy.png}
         \begin{flushright}
         {\tiny \copyright Mark Potse, University Maastricht}
         \end  {flushright}
       \end{minipage}
+      \end{headerbox}]
+ \end{posterbox}
+
+  \begin{posterbox}[2]
+    \begin{headerbox}[
+        title=Background: Understanding Cardiac Resynchronization Therapy,
+        height=0.23\textheight,
+        width=0.47\textwidth]
 
     \end{headerbox}
     \vfill
@@ -196,43 +205,6 @@
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{posterbox}
-    \begin{headerbox}[
-        title=Simulation of a Heartbeat,
-        height=0.19\textheight]
-      \begin{minipage}{0.19\textwidth}\sf
-        \textbf{Description}
-        \begin{compactitem}
-          \item Monodomain simulation of a full heartbeat
-          \item Stimulation current applied at end of Purkinje fibers
-          \item Performed on 132 cores of \textit{Rosa} with $\sim 40$ min wallclock time
-          \item The visualization shows the steep rise of the transmembrane potential
-                and the smooth decay
-        \end{compactitem}
-
-        \vspace{0.5cm}
-
-        \textbf{Visualization}
-        \begin{compactitem}
-          \item Visualization is an essential tool for analysis of simulation data but can
-                be a challenge in itself
-          \item Visualization (performed by Jean Favre from CSCS) required four visualization nodes
-                to allow for handling the massive data volume produced by the time-dependent simulation
-        \end{compactitem}
-      \end{minipage}
-      \begin{minipage}{0.79\textwidth}\sf
-        \begin{center}
-          \includegraphics[width=0.3\textwidth]{heart1}
-          \includegraphics[width=0.3\textwidth]{heart2}
-          \includegraphics[width=0.3\textwidth]{heart3}
-        \end{center}
-        \begin{center}
-          \includegraphics[width=0.3\textwidth]{heart4}
-          \includegraphics[width=0.3\textwidth]{heart5}
-          \includegraphics[width=0.3\textwidth]{heart6}
-        \end{center}
-      \end{minipage}
-      \end{headerbox}
-  \end{posterbox}
+ 
 
 \end{document}
