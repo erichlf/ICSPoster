@@ -128,14 +128,13 @@
 
 \NewEnviron{headerbox}[1][]{
   \setkeys{headerbox}{title=,height=\textheight,width=\textwidth,#1}
-  \newpart{\hb@title}
   \vbox to \hb@height {%
-    \vspace{.5em}
+    \newpart{\hb@title}\\[0.8em]
     \sf
     \begin{minipage}{\hb@width}\sf
       \BODY
     \end{minipage}
-    \vfill\eject% \break
+    \vfill\eject
     \break
   } % end vbox
 }
