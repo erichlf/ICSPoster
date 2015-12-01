@@ -153,14 +153,11 @@
       \end{minipage}
       \hspace*{0.07\textwidth}
       \begin{minipage}{0.43\textwidth}
+        \titlefont{\@title}\\[1em]
         \ifbool{@sub}{
-          \titlefont{\@title}\\[1em]
-          \subtitlefont{\@subtitle}[1em]
-          \@author
-        }{
-          \titlefont{\@title}\\[1em]
-          \@author
-        }
+          \subtitlefont{\@subtitle}\\[1em]
+        }{ }
+        {\LARGE\@author}
       \end{minipage}
   \end{posterbox}
 }
