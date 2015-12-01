@@ -155,9 +155,11 @@
       \begin{minipage}{0.43\textwidth}
         \ifbool{@sub}{
           \titlefont{\@title}\\[1em]
-          \subtitlefont{\@subtitle}
+          \subtitlefont{\@subtitle}[1em]
+          \@author
         }{
-          \titlefont{\@title}
+          \titlefont{\@title}\\[1em]
+          \@author
         }
       \end{minipage}
   \end{posterbox}
