@@ -47,6 +47,7 @@
 \def\@subtitle{}
 \def\@author{}
 \def\@logo{}
+\def\@logosize{}
 
 \newbool{@sub}
 \boolfalse{@sub}
@@ -54,7 +55,7 @@
 
 \newbool{@logo}
 \boolfalse{@logo}
-\def\logo#1{\booltrue{@logo} \gdef\@logo{#1}}
+\newcommand{\logo}[2][width=\textwidth]{\booltrue{@logo} \gdef\@logo{#2} \gdef\@logosize{#1}}
 
 % parameters-
 \setlength{\pdfpageheight}{1189mm}
@@ -146,7 +147,7 @@
   \begin{posterbox}
       \begin{minipage}{0.45\textwidth}
         \ifbool{@logo}{
-          \includegraphics[width=\textwidth]{\@logo}
+          \expandafter\includegraphics\expandafter[\@logosize]{\@logo}
         }{
           \includegraphics[width=\textwidth]{USI-ICS.jpg}
         }
